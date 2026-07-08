@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Examination Portal - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <!-- ================= LOGIN CARD ================= -->
+    <div class="auth-card" id="loginCard">
+      <h2>Online Examination Portal</h2>
+      <p class="subtitle">Sign in to continue</p>
+
+      <div class="demo-note">
+        Demo accounts &mdash; Teacher: teacher@demo.com / teacher123<br />
+        Student: student@demo.com / student123
+      </div>
+
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" required placeholder="you@example.com" />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required placeholder="••••••••" />
+
+        <div class="error-text" id="loginError"></div>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+
+      <p class="switch-text">
+        Don't have an account? <a href="#" id="showRegister">Register here</a>
+      </p>
+    </div>
+
+    <!-- ================= REGISTER CARD ================= -->
+    <div class="auth-card hidden" id="registerCard">
+      <h2>Create Account</h2>
+      <p class="subtitle">Register as a teacher or student</p>
+
+      <form id="registerForm">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" required placeholder="Your name" />
+
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" required placeholder="you@example.com" />
+
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" required placeholder="Choose a password" />
+
+        <label for="regRole">Role</label>
+        <select id="regRole" required>
+          <option value="">Select role</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+        </select>
+
+        <div class="error-text" id="registerError"></div>
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+
+      <p class="switch-text">
+        Already have an account? <a href="#" id="showLogin">Login here</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Data layer must load before auth logic -->
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

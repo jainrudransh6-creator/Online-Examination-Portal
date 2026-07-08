@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard - Online Examination Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV BAR ================= -->
+  <nav class="navbar">
+    <h1>🎓 Student Dashboard</h1>
+    <div class="nav-right">
+      <span>Welcome, <strong id="welcomeName"></strong></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+
+    <!-- ================= EXAM LIST VIEW ================= -->
+    <div id="examListView">
+      <section class="panel">
+        <h2>Available Examinations</h2>
+        <div id="availableExams"><!-- exam cards injected by student.js --></div>
+      </section>
+
+      <section class="panel">
+        <h2>My Results</h2>
+        <div id="myResults"><!-- result rows injected by student.js --></div>
+      </section>
+    </div>
+
+    <!-- ================= EXAM TAKING VIEW ================= -->
+    <div id="examTakingView" class="panel hidden">
+      <div class="exam-taking-header">
+        <h2 id="examTakingTitle"></h2>
+        <div class="timer-box" id="examTimer">00:00</div>
+      </div>
+      <div id="examQuestions"><!-- questions injected by student.js --></div>
+      <button id="submitExamBtn" class="btn-primary">Submit Exam</button>
+    </div>
+
+    <!-- ================= RESULT VIEW ================= -->
+    <div id="examResultView" class="panel hidden">
+      <div id="resultSummary"><!-- score injected by student.js --></div>
+      <button id="backToDashboardBtn" class="btn-primary">Back to Dashboard</button>
+    </div>
+
+  </div>
+
+  <!-- Data layer must load before student logic -->
+  <script src="js/data.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>

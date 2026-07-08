@@ -1,0 +1,320 @@
+/* ============================================================
+   style.css - Online Examination Portal
+   ============================================================ */
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Top navigation bar (dashboards) ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  color: #fff;
+  padding: 16px 32px;
+}
+.navbar h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.navbar button {
+  background: #fff;
+  color: var(--primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ---------- Auth page (index.html) ---------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  padding: 20px;
+}
+.auth-card {
+  background: var(--card-bg);
+  padding: 36px;
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.auth-card h2 {
+  margin-top: 0;
+  text-align: center;
+  color: var(--primary);
+}
+.auth-card p.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-top: -8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Generic form styling ---------- */
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+.btn-secondary {
+  background: #eef2ff;
+  color: var(--primary);
+}
+.btn-danger {
+  background: #fee2e2;
+  color: var(--danger);
+}
+.error-text {
+  color: var(--danger);
+  font-size: 0.85rem;
+  min-height: 18px;
+  margin-top: 8px;
+}
+.switch-text {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+.switch-text a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.demo-note {
+  background: #eef2ff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+
+/* ---------- Dashboard layout ---------- */
+.dashboard-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px 60px;
+}
+.panel {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.panel h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+/* ---------- Exam creation (teacher) ---------- */
+.question-block {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background: #fafafa;
+}
+.question-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.option-row input[type="text"] {
+  flex: 1;
+}
+#addQuestionBtn {
+  margin-top: 4px;
+}
+
+/* ---------- Exam / result cards ---------- */
+.exam-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.exam-card h4 {
+  margin: 0 0 4px;
+}
+.exam-card-actions {
+  display: flex;
+  gap: 8px;
+}
+.badge {
+  background: #dcfce7;
+  color: var(--success);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ---------- Results table ---------- */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.results-table th,
+.results-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.results-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+/* ---------- Exam-taking screen ---------- */
+.exam-taking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.timer-box {
+  background: var(--danger);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.exam-question {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+.exam-question:last-child {
+  border-bottom: none;
+}
+.option-label {
+  display: block;
+  font-weight: 400;
+  margin: 6px 0;
+  cursor: pointer;
+}
+.option-label input {
+  margin-right: 8px;
+}
+
+/* ---------- Result screen ---------- */
+#examResultView {
+  text-align: center;
+}
+.score-big {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-weight: 800;
+  margin: 10px 0 0;
+}

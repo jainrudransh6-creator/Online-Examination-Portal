@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard - Online Examination Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV BAR ================= -->
+  <nav class="navbar">
+    <h1>📘 Teacher Dashboard</h1>
+    <div class="nav-right">
+      <span>Welcome, <strong id="welcomeName"></strong></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+
+    <!-- ================= CREATE EXAM ================= -->
+    <section class="panel">
+      <h2>Create New Examination</h2>
+      <form id="examForm">
+        <label for="examTitle">Exam Title</label>
+        <input type="text" id="examTitle" required placeholder="e.g. Data Structures - Mid Term" />
+
+        <label for="examDuration">Duration (minutes)</label>
+        <input type="number" id="examDuration" min="1" value="30" required />
+
+        <div id="questionsContainer"><!-- question blocks injected by teacher.js --></div>
+
+        <button type="button" id="addQuestionBtn" class="btn-secondary">+ Add Question</button>
+        <div class="error-text" id="formMessage"></div>
+        <button type="submit" class="btn-primary">Publish Exam</button>
+      </form>
+    </section>
+
+    <!-- ================= EXAM LIST ================= -->
+    <section class="panel">
+      <h2>My Examinations</h2>
+      <div id="examList"><!-- exam cards injected by teacher.js --></div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section class="panel" id="resultsPanel"><!-- results table injected by teacher.js --></section>
+
+  </div>
+
+  <!-- Data layer must load before teacher logic -->
+  <script src="js/data.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>
